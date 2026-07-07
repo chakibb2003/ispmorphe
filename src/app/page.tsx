@@ -280,30 +280,71 @@ export default function Home() {
           <h4 className="section-subtitle">{t('packs_subtitle')}</h4>
           <h2 className="section-title">{t('packs_title')} <span className="gradient-text">{t('packs_title_highlight')}</span> {t('packs_title_end')}</h2>
 
-          <div className="flex justify-center mt-12">
-            <div className="pricing-card border-2 border-[var(--primary-color)] w-full max-w-lg z-10 relative shadow-[var(--shadow-lg)] transform transition-transform hover:-translate-y-2">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] text-white px-8 py-1.5 rounded-full text-sm font-bold shadow-md">
-                {t('pack_popular')}
-              </div>
+          <div className="grid lg:grid-cols-3 gap-8 mt-12 items-center">
+            {/* Starter Pack */}
+            <div className="pricing-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center text-xl">
+                  <i className="fa-solid fa-paper-plane"></i>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">{t('pack1_name')}</h3>
+                  <p className="text-xs text-slate-500">{t('pack1_desc')}</p>
+                </div>
+              </div>
+              <ul className="space-y-4 mb-8">
+                {[1, 2, 3, 4, 5, 6, 7].map(n => (
+                  <li key={n} className="flex items-start gap-3 text-sm text-slate-700">
+                    <i className="fa-solid fa-check text-emerald-500 mt-0.5"></i> <span>{t(`pack1_f${n}`)}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact" className="btn btn-outline w-full text-center block">{t('btn_start_project')}</a>
+            </div>
+
+            {/* Business Pack */}
+            <div className="pricing-card border-2 border-[var(--primary-color)] bg-white rounded-2xl p-8 shadow-[var(--shadow-lg)] transform transition-transform hover:-translate-y-2 relative z-10">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] text-white px-6 py-1.5 rounded-full text-xs font-bold shadow-md whitespace-nowrap">
+                ⭐ {t('pack_popular')}
+              </div>
+              <div className="flex items-center gap-4 mb-6 mt-2">
                 <div className="w-14 h-14 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-xl flex items-center justify-center text-2xl">
                   <i className="fa-solid fa-rocket"></i>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">{t('pack1_name')}</h3>
-                  <p className="text-sm text-slate-500">{t('pack1_desc')}</p>
+                  <h3 className="text-2xl font-bold">{t('pack2_name')}</h3>
+                  <p className="text-xs text-slate-500">{t('pack2_desc')}</p>
                 </div>
               </div>
-              <div className="border-b border-black/5 pb-8 mb-8 text-center sm:text-left">
-                <div className="text-sm font-bold text-slate-400 mb-1 tracking-wider uppercase">{lang === 'ar' ? 'ابتداءً من' : 'Starting from'}</div>
-                <h2 className="text-5xl font-bold text-[var(--primary-color)]" dir="ltr">15,000 <span className="text-2xl font-normal text-slate-500">DZD</span></h2>
-              </div>
-              <ul className="space-y-4 mb-10 px-2">
-                {[1, 2, 3, 4, 5].map(n => (
-                  <li key={n} className="flex items-center gap-4 text-slate-700 font-medium"><i className="fa-solid fa-circle-check text-[var(--primary-color)] text-xl"></i> <span>{t(`pack2_f${n}`)}</span></li>
+              <ul className="space-y-4 mb-8">
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(n => (
+                  <li key={n} className="flex items-start gap-3 text-sm text-slate-700 font-medium">
+                    <i className="fa-solid fa-circle-check text-[var(--primary-color)] mt-0.5 text-lg"></i> <span>{t(`pack2_f${n}`)}</span>
+                  </li>
                 ))}
               </ul>
-              <a href="#contact" className="btn btn-primary w-full text-lg py-4 shadow-lg hover:shadow-xl">{t('btn_start_project')}</a>
+              <a href="#contact" className="btn btn-primary w-full text-center py-3 block">{t('btn_start_project')}</a>
+            </div>
+
+            {/* Enterprise Pack */}
+            <div className="pricing-card bg-slate-900 text-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-white/10 text-white rounded-xl flex items-center justify-center text-xl">
+                  <i className="fa-solid fa-building"></i>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">{t('pack3_name')}</h3>
+                  <p className="text-xs text-slate-400">{t('pack3_desc')}</p>
+                </div>
+              </div>
+              <ul className="space-y-4 mb-8">
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => (
+                  <li key={n} className="flex items-start gap-3 text-sm text-slate-300">
+                    <i className="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span>{t(`pack3_f${n}`)}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact" className="btn bg-white text-slate-900 hover:bg-slate-100 w-full text-center block">{t('btn_start_project')}</a>
             </div>
           </div>
         </div>
