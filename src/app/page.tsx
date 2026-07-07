@@ -169,15 +169,15 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-12">
               <div>
-                <h3 className="text-4xl font-bold text-[var(--primary-color)] mb-1">50+</h3>
+                <h3 className="text-4xl font-bold text-[var(--primary-color)] mb-1">+20</h3>
                 <p className="font-semibold">{t('stat_projects')}</p>
               </div>
               <div>
-                <h3 className="text-4xl font-bold text-[var(--primary-color)] mb-1">98%</h3>
+                <h3 className="text-4xl font-bold text-[var(--primary-color)] mb-1">100%</h3>
                 <p className="font-semibold">{t('stat_satisfaction')}</p>
               </div>
               <div>
-                <h3 className="text-4xl font-bold text-[var(--primary-color)] mb-1">5+</h3>
+                <h3 className="text-4xl font-bold text-[var(--primary-color)] mb-1">+2</h3>
                 <p className="font-semibold">{t('stat_experience')}</p>
               </div>
             </div>
@@ -338,44 +338,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="section-padding bg-slate-50">
-        <div className="max-w-7xl mx-auto px-8">
-          <h4 className="section-subtitle">{t('test_subtitle')}</h4>
-          <h2 className="section-title">{t('test_title')} <span className="gradient-text">{t('test_title_highlight')}</span> {t('test_title_end')}</h2>
-
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            <div className="bg-white p-10 rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)] relative">
-              <i className="fa-solid fa-quote-left absolute top-8 right-8 text-5xl text-[var(--primary-color)]/5"></i>
-              <p className="text-lg italic text-slate-800 mb-8 relative z-10">{t('test1_text')}</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--primary-color)] to-[var(--secondary-color)] text-white flex items-center justify-center font-bold">JD</div>
-                <div>
-                  <h4 className="font-bold">John Doe</h4>
-                  <span className="text-sm text-slate-500">{t('test1_role')}</span>
-                </div>
-                <div className={`text-amber-500 text-sm ${lang === 'ar' ? 'mr-auto' : 'ml-auto'}`}>
-                  <i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white p-10 rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)] relative">
-              <i className="fa-solid fa-quote-left absolute top-8 right-8 text-5xl text-emerald-500/5"></i>
-              <p className="text-lg italic text-slate-800 mb-8 relative z-10">{t('test2_text')}</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-blue-500 text-white flex items-center justify-center font-bold">SA</div>
-                <div>
-                  <h4 className="font-bold">{t('test2_name')}</h4>
-                  <span className="text-sm text-slate-500">{t('test2_role')}</span>
-                </div>
-                <div className={`text-amber-500 text-sm ${lang === 'ar' ? 'mr-auto' : 'ml-auto'}`}>
-                  <i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section id="contact" className="section-padding">
