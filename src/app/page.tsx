@@ -412,7 +412,7 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4">{t('contact_follow')}</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-[var(--primary-color)] hover:text-white transition-colors"><i className="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/isomorphetech/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-[var(--primary-color)] hover:text-white transition-colors"><i className="fa-brands fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61591323042243" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-[var(--primary-color)] hover:text-white transition-colors"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
             </div>
@@ -491,7 +491,7 @@ export default function Home() {
             </ul>
             <div className="flex gap-4">
               <a href="https://www.facebook.com/profile.php?id=61591323042243" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-colors"><i className="fa-brands fa-facebook-f"></i></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-colors"><i className="fa-brands fa-instagram"></i></a>
+              <a href="https://www.instagram.com/isomorphetech/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--primary-color)] transition-colors"><i className="fa-brands fa-instagram"></i></a>
             </div>
           </div>
         </div>
