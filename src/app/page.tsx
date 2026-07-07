@@ -29,6 +29,7 @@ export default function Home() {
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
       phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
       company: (form.elements.namedItem('company') as HTMLInputElement).value,
+      pack: (form.elements.namedItem('pack') as HTMLSelectElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
     };
 
@@ -442,6 +443,21 @@ export default function Home() {
                   <div>
                     <label className="block text-sm font-semibold mb-2">{t('form_company')}</label>
                     <input type="text" name="company" className="w-full px-4 py-3 border border-slate-200 rounded-lg bg-slate-50 focus:bg-white focus:border-[var(--primary-color)] focus:ring-[3px] focus:ring-[var(--primary-color)]/10 outline-none transition-all" />
+                  </div>
+                </div>
+                <div className="mb-6">
+                  <label className="block text-sm font-semibold mb-2">{t('form_pack')}</label>
+                  <div className="relative">
+                    <select name="pack" className="w-full px-4 py-3 border border-slate-200 rounded-lg bg-slate-50 focus:bg-white focus:border-[var(--primary-color)] focus:ring-[3px] focus:ring-[var(--primary-color)]/10 outline-none transition-all appearance-none cursor-pointer">
+                      <option value="">{t('form_pack_default')}</option>
+                      <option value="Starter Pack">{t('pack1_name')}</option>
+                      <option value="Business Pack">{t('pack2_name')}</option>
+                      <option value="Enterprise Pack">{t('pack3_name')}</option>
+                      <option value="Other">{t('form_pack_other')}</option>
+                    </select>
+                    <div className={`absolute inset-y-0 ${lang === 'ar' ? 'left-0' : 'right-0'} flex items-center px-4 pointer-events-none text-slate-500`}>
+                      <i className="fa-solid fa-chevron-down text-sm"></i>
+                    </div>
                   </div>
                 </div>
                 <div className="mb-6">

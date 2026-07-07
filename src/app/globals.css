@@ -224,7 +224,6 @@ body {
 }
 
 .pricing-card {
-  background-color: white;
   padding: 2.5rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
