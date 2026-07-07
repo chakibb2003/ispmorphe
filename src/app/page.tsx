@@ -20,9 +20,9 @@ export default function Home() {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus(lang === 'ar' ? 'جاري الإرسال...' : 'Sending...');
-    
+
     const form = e.target as HTMLFormElement;
-    
+
     // Create an object containing the form data
     const data = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
@@ -31,10 +31,10 @@ export default function Home() {
       company: (form.elements.namedItem('company') as HTMLInputElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
     };
-    
+
     // Google Apps Script Web App URL for contact form submissions
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycby7ZO8NwopvvUTxgVdAD05cop_fLmr8NuWfwxV-hx9SYxzUjm7q_UeJFo_sPxeVW-0ifA/exec';
-    
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyDy-jjL2-Jst1uWQXEhdAKvqbp52lh2MrA9Rpgl-Q3QNBEUK8z6qwpNH9vFPEvOEarRQ/exec';
+
     try {
       await fetch(scriptUrl, {
         method: 'POST',
@@ -42,7 +42,7 @@ export default function Home() {
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(data)
       });
-      
+
       // With no-cors, the response is opaque, so we just assume success.
       setFormStatus(lang === 'ar' ? 'تم إرسال رسالتك بنجاح!' : 'Message sent successfully!');
       form.reset();
@@ -50,7 +50,7 @@ export default function Home() {
       console.error('Error submitting form:', error);
       setFormStatus(lang === 'ar' ? 'حدث خطأ، يرجى المحاولة مرة أخرى.' : 'Error sending message. Please try again.');
     }
-    
+
     setTimeout(() => setFormStatus(''), 5000);
   };
 
@@ -65,14 +65,14 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative font-sans text-slate-800 bg-white">
-      
+
       {/* Header */}
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md py-4 shadow-sm border-b border-white/50' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
           <a href="#" className="flex items-center shrink-0">
             <img src="/logo.png" alt="Isomorphe Tech Logo" className="h-[80px] lg:h-[100px] w-auto object-contain" />
           </a>
-          
+
           <nav className="hidden md:flex gap-8">
             <a href="#home" className="font-medium hover:text-[var(--primary-color)] transition-colors">{t('nav_home')}</a>
             <a href="#about" className="font-medium hover:text-[var(--primary-color)] transition-colors">{t('nav_about')}</a>
@@ -81,7 +81,7 @@ export default function Home() {
             <a href="#packs" className="font-medium hover:text-[var(--primary-color)] transition-colors">{t('nav_packs')}</a>
             <a href="#contact" className="font-medium hover:text-[var(--primary-color)] transition-colors">{t('nav_contact')}</a>
           </nav>
-          
+
           <div className="flex items-center gap-6">
             <div className="flex bg-slate-50 p-1 rounded-full">
               <button onClick={() => setLang('en')} className={`px-3 py-1 text-sm font-semibold rounded-full transition-all ${lang === 'en' ? 'bg-white text-[var(--primary-color)] shadow-sm' : 'text-slate-400'}`}>EN</button>
@@ -100,7 +100,7 @@ export default function Home() {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div 
+      <div
         className={`fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 transition-opacity duration-300 md:hidden ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setMobileMenuOpen(false)}
       ></div>
@@ -143,7 +143,7 @@ export default function Home() {
               <p><i className="fa-solid fa-check-circle text-[var(--primary-color)] mr-2"></i> {t('hero_trusted')}</p>
             </div>
           </div>
-          
+
           <div className="relative hidden lg:flex justify-end items-center">
             <img src="/hero-illustration.png" alt="Digital Solutions Illustration" className="w-full max-w-[650px] object-contain scale-105 translate-x-6" />
           </div>
@@ -166,7 +166,7 @@ export default function Home() {
             <h4 className="section-subtitle">{t('about_subtitle')}</h4>
             <h2 className="section-title">{t('about_title')} <span className="gradient-text">{t('about_title_highlight')}</span> {t('about_title_end')}</h2>
             <p className="text-lg text-slate-500 mb-10">{t('about_text')}</p>
-            
+
             <div className="flex flex-wrap gap-12">
               <div>
                 <h3 className="text-4xl font-bold text-[var(--primary-color)] mb-1">50+</h3>
@@ -193,7 +193,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-8">
           <h4 className="section-subtitle">{t('services_subtitle')}</h4>
           <h2 className="section-title">{t('services_title')} <span className="gradient-text">{t('services_title_highlight')}</span> {t('services_title_end')}</h2>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mt-12">
             {[
               { i: 'fa-code', title: 'srv_web_title', desc: 'srv_web_desc' },
@@ -299,7 +299,7 @@ export default function Home() {
                 <h2 className="text-5xl font-bold text-[var(--primary-color)]" dir="ltr">15,000 <span className="text-2xl font-normal text-slate-500">DZD</span></h2>
               </div>
               <ul className="space-y-4 mb-10 px-2">
-                {[1,2,3,4,5].map(n => (
+                {[1, 2, 3, 4, 5].map(n => (
                   <li key={n} className="flex items-center gap-4 text-slate-700 font-medium"><i className="fa-solid fa-circle-check text-[var(--primary-color)] text-xl"></i> <span>{t(`pack2_f${n}`)}</span></li>
                 ))}
               </ul>
@@ -317,7 +317,7 @@ export default function Home() {
 
           <div className="relative flex flex-col lg:flex-row justify-between mt-16 gap-8 lg:gap-0">
             <div className="hidden lg:block absolute top-[30px] left-0 w-full h-[2px] bg-[var(--primary-color)]/20 z-0"></div>
-            
+
             {[
               { i: 'fa-magnifying-glass', title: 'proc1_title', desc: 'proc1_desc' },
               { i: 'fa-pen-ruler', title: 'proc2_title', desc: 'proc2_desc' },
@@ -504,7 +504,7 @@ export default function Home() {
       <a href="https://wa.me/213561336041" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <i className="fa-brands fa-whatsapp"></i>
       </a>
-      
+
     </main>
   );
 }
